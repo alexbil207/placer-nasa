@@ -1,0 +1,18 @@
+.toast-notification {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    height: 6rem;
+    width: 50rem;
+    transform: translateX(100%);
+    animation: slide-in 0.5s forwards;
+    font-size: 2rem;
+    color: var(--white);
+    text-align: center;
+}
+
+@keyframes slide-in {
+    100% {
+        transform: translateX(0%);
+    }
+}

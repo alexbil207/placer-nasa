@@ -18,7 +18,7 @@ export const SearchBar = () => {
           type="text"
           name="year"
           id="year"
-          value={filterBy.year}
+          value={filterBy?.year || ""}
           onChange={handleChange}
           onBlur={() => setTimeout(() => setOpen(false), 100)}
           onFocus={() => setOpen(true)}
@@ -26,12 +26,12 @@ export const SearchBar = () => {
         <SearchAutoComplite isOpen={isOpen} meteors={getOptions(meteors)} />
       </div>
       <div className="input-wrapper">
-        <label htmlFor="mass">Mass</label>
+        <label htmlFor="mass">Greater Mass</label>
         <input
           type="number"
           name="mass"
           id="mass"
-          value={filterBy.mass}
+          value={filterBy?.mass || ""}
           onChange={handleChange}
         />
       </div>

@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import axios from "axios";
 import { useDispatch } from "react-redux";
-import { addMeteors, setError, setLoading } from "../store/meteorReducer";
+import { addMeteors, setLoading } from "../store/meteorReducer";
 import { AppDispatch } from "../store/store";
 import { IMeteor } from "../types";
 
@@ -19,7 +19,7 @@ export const useHttp = () => {
         dispatch(addMeteors(res.data));
       } catch (err: unknown) {
         dispatch(setLoading(false));
-        dispatch(setError((err as Error).message));
+        console.error((err as Error).message);
       }
     };
 

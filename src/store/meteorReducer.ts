@@ -4,8 +4,6 @@ import { IFilter, IMeteor } from "../types";
 interface IState {
   meteors: IMeteor[];
   isLoading: boolean;
-  error: string;
-  total: number;
   filterBy: IFilter;
 }
 
@@ -21,14 +19,11 @@ export const meteorSlice = createSlice({
   reducers: {
     addMeteors: (state: IState, action: PayloadAction<IMeteor[]>) => {
       state.meteors = [...action.payload];
-      state.total = action.payload.length;
     },
     setLoading: (state: IState, action: PayloadAction<boolean>) => {
       state.isLoading = action.payload;
     },
-    setError: (state: IState, action: PayloadAction<string>) => {
-      state.error = action.payload;
-    },
+
     setFilter: (
       state: IState,
       action: PayloadAction<{ name: string; value: string }>
@@ -39,6 +34,5 @@ export const meteorSlice = createSlice({
   },
 });
 
-export const { addMeteors, setLoading, setError, setFilter } =
-  meteorSlice.actions;
+export const { addMeteors, setLoading, setFilter } = meteorSlice.actions;
 export const meteorReducer = meteorSlice.reducer;

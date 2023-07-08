@@ -20,3 +20,13 @@ export const getOptions = (meteors: IMeteor[] | null) => {
   const unic = new Set(years);
   return Array.from(unic).slice(0, 10);
 };
+
+export const findFirstByCritiria = (
+  meteors: IMeteor[],
+  mass: string
+): IMeteor => {
+  const idx: number = meteors.findIndex(
+    (meteor: IMeteor) => +meteor.mass > +mass
+  );
+  return meteors[idx];
+};
