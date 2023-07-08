@@ -1,0 +1,51 @@
+.cards-wrapper {
+    height: 60rem;
+    width: 100%;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fill, 20rem);
+    grid-row: auto;
+    overflow-y: auto;
+    justify-content: center;
+}
+.card-container {
+    padding: var(--padding);
+    height: 15rem;
+    width: 20rem;
+    background-color: var(--jet);
+    color: var(--white);
+    border-radius: 1rem;
+    box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.2);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    text-align: center;
+}
+.card-container :first-child {
+    grid-column: 1 / -1;
+    text-align: center;
+    font-size: 2rem;
+    color: red;
+}
+
+h3 {
+    text-align: center;
+    margin: 1rem 0;
+}
+
+.pagination-btns {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin: 2rem 0;
+}
+.pagination-btns button {
+    border: none;
+    background-color: var(--jet);
+    color: var(--white);
+    padding: 1.2rem;
+    border-radius: 1rem;
+}
+.pagination-btns button:active {
+    position: relative;
+    top: 1px;
+}

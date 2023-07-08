@@ -1,0 +1,45 @@
+:root {
+  --black: #1b1b1b;
+  --white: #fff;
+  --padding: 2rem;
+  --latte: #f8f4e3;
+  --jet: #2a2b2a;
+  --font-size: 1.3rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+}
+
+@font-face {
+  font-family: OpenSans;
+  src: url("./assets/font/OpenSans.ttf");
+}
+
+body {
+  font-family: OpenSans, sans-serif;
+  background-color: var(--latte);
+  color: var(--black);
+  max-width: 150rem;
+  margin: 0 auto;
+}
+
+#root {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: grid;
+  grid-template-rows:
+    auto
+    auto
+    auto
+    1fr;
+}
+.cursor-pointer {
+  cursor: pointer;
+}

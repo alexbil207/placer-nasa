@@ -1,0 +1,49 @@
+form {
+    display: flex;
+    gap: 0.5rem 2rem;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+form input,
+.auto-complite {
+    width: 30rem;
+}
+
+.input-wrapper {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.auto-complite {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: var(--white);
+    transform: translate(0, 100%);
+    font-size: var(--font-size);
+    animation: show 200ms ease-in;
+    display: none;
+    flex-direction: column;
+}
+.auto-complite p {
+    padding: 0.5rem;
+}
+.auto-complite p:hover {
+    background-color: var(--black);
+    color: var(--white);
+}
+
+.show {
+    display: flex;
+}
+
+@keyframes show {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
