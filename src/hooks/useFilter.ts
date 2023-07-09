@@ -8,7 +8,9 @@ export const useFilter = () => {
     (state: RootState) => state.meteors
   );
 
-  const filter = meteors
+  let isModal = false;
+
+  let filter: IMeteor[] = meteors
     .filter((meteor: IMeteor) => {
       if (!filterBy.year) return meteor;
       return getYear(meteor.year).includes(filterBy.year as string);
@@ -18,5 +20,15 @@ export const useFilter = () => {
       return +meteor.mass > +filterBy.mass;
     });
 
-  return { meteors: filter, filterBy };
+  if (!filter.length) {
+    const res: IMeteor | undefined = meteors.find(
+      (meteor: IMeteor) => +meteor.mass > +filterBy.mass
+    );
+    if (res) {
+      isModal = true;
+      filter = [res];
+    }
+  }
+
+  return { meteors: filter, filterBy, isModal };
 };

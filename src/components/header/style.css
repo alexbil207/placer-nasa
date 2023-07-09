@@ -2,3 +2,9 @@ h6 {
     text-align: center;
     font-size: 3rem;
 }
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

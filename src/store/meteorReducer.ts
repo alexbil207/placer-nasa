@@ -12,8 +12,6 @@ export const meteorSlice = createSlice({
   initialState: {
     meteors: [],
     isLoading: false,
-    error: "",
-    total: 0,
     filterBy: { year: "", mass: "" },
   },
   reducers: {
