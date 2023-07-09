@@ -26,6 +26,7 @@ form input,
     animation: show 200ms ease-in;
     display: none;
     flex-direction: column;
+    z-index: 1;
 }
 .auto-complite p {
     padding: 0.5rem;
